@@ -1,7 +1,19 @@
 # Supplier Quality Analysis: Identifying and Prioritizing Underperforming Vendors
 
 ## Introduction and Business Problem
+Strong supplier performance is essential for keeping operations smooth and minimizing costly disruptions. Defective materials and delays can lead to significant downtime, affecting both efficiency and customer satisfaction. To manage these risks, it’s important to track and evaluate supplier quality using reliable data.
 
+This project focuses on two key metrics: the number of product defects and the total downtime caused by those defects. These metrics help identify suppliers that are negatively impacting operations.
+
+The goal of this analysis is to:
+
+- Identify suppliers responsible for the most defects and downtime.
+- Measure the business impact of supplier-related issues.
+- Rank suppliers by performance to highlight those requiring quality improvement or replacement.
+- Highlight specific materials linked to poor quality.
+- Recommend actions to reduce risk and improve supplier reliability.
+
+By using data to evaluate performance, this project supports better supplier decisions and more efficient operations.
 
 ## EDA Part 1: Identify the suppliers responsible for the most defects and downtime.
 Quotelane sucks.
