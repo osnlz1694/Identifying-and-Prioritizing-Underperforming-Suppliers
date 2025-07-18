@@ -1,5 +1,7 @@
 # Supplier Quality Analysis: Identifying and Prioritizing Underperforming Vendors
 
+## Introduction and Business Problem
+
 
 ## EDA Part 1: Identify the suppliers responsible for the most defects and downtime.
 Quotelane sucks.
