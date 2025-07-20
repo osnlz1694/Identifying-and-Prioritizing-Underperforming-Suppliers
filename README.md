@@ -17,7 +17,7 @@ By using data to evaluate performance, this project supports better supplier dec
 
 ## Pre-EDA: Source and Granularity of the Data
 
-This is open-source data I found from Isreal Bassey's "Supplier Quality Analysis" project. Originally, this is real business data from Obvience that was anonymized. I implemented the exact same schema as the one in Isreal's project but in MySQL (https://github.com/BasseyIsrael/Supplier-Quality-Analysis?tab=readme-ov-file#source-of-data).
+This is open-source data I found from Isreal Bassey's ["Supplier Quality Analysis"] (https://github.com/BasseyIsrael/Supplier-Quality-Analysis) project. Originally, this is real business data from Obvience that was anonymized. I implemented the exact same schema as the one in [Isreal's project] (https://github.com/BasseyIsrael/Supplier-Quality-Analysis?tab=readme-ov-file#source-of-data) but in MySQL.
 
 The granularity of the data can be split into two parts. On one hand, the granularity of the table `metrics` represents purchase details for each unique order like the date or total downtime of an order. On the other hand, the granularity of all of the other tables represent unique categories of their respective tables like unique plant locations in the table `plant`. And since all of these non-`metrics` tables contain an ID column that references to `metrics`, we will join multiple tables with `metrics` for the majority of this analysis.
 
