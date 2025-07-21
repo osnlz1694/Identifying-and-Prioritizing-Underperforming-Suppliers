@@ -223,7 +223,7 @@ GROUP BY plant;
 
 
 ## Visualization: Recommend actions to reduce risk and improve supplier reliability.
-[Tableau Visualization Link](https://public.tableau.com/views/SupplierPerformanceAnalysisIdentifyingandPrioritizingUnderperformingSuppliers/Dashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+[Tableau Visualization Here](https://public.tableau.com/views/SupplierPerformanceAnalysisIdentifyingandPrioritizingUnderperformingSuppliers/Dashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 <img width="1026" height="770" alt="Screenshot 2025-07-21 at 2 02 22 PM" src="https://github.com/user-attachments/assets/e9522cd8-735b-4888-a4ef-cfd1291e3bfe" />
 
