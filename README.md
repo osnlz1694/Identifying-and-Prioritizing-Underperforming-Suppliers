@@ -12,9 +12,14 @@ The goal of this analysis is to:
 - Measure the business impact of supplier-related issues.
 - Rank suppliers by performance to highlight those requiring quality improvement or replacement.
 - Highlight specific materials linked to poor quality.
+- Explore monthly trends and other attributes.
 - Recommend actions to reduce risk and improve supplier reliability.
 
 By using data to evaluate performance, this project supports better supplier decisions and more efficient operations.
+
+
+## Table of Contents
+- 
 
 
 ## Pre-EDA: Source and Granularity of the Data
