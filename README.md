@@ -20,12 +20,12 @@ By using data to evaluate performance, this project supports better supplier dec
 
 ## Table of Contents
 - [Pre-EDA: Assess the source and granularity of the data.](#pre-eda-assess-the-source-and-granularity-of-the-data)
-- [EDA Part 1: Identify the suppliers responsible for the most defects and downtime.](https://github.com/osnlz1694/Identifying-and-Prioritizing-Underperforming-Suppliers/tree/main?tab=readme-ov-file#eda-part-1-identify-the-suppliers-responsible-for-the-most-defects-and-downtime)
-- [EDA Part 2: Measure the business impact of supplier-related issues.](https://github.com/osnlz1694/Identifying-and-Prioritizing-Underperforming-Suppliers/tree/main?tab=readme-ov-file#eda-part-2-measure-the-business-impact-of-supplier-related-issues)
-- [EDA Part 3: Rank suppliers by performance to highlight those requiring quality improvement or replacement.](https://github.com/osnlz1694/Identifying-and-Prioritizing-Underperforming-Suppliers/tree/main?tab=readme-ov-file#eda-part-3-rank-suppliers-by-performance-to-highlight-those-requiring-quality-improvement-or-replacement)
-- [EDA Part 4: Highlight specific materials linked to poor quality.](https://github.com/osnlz1694/Identifying-and-Prioritizing-Underperforming-Suppliers/tree/main?tab=readme-ov-file#eda-part-4-highlight-specific-materials-linked-to-poor-quality)
-- [EDA Addendum: Explore monthly trends and other attributes.](https://github.com/osnlz1694/Identifying-and-Prioritizing-Underperforming-Suppliers/tree/main?tab=readme-ov-file#eda-addendum-explore-monthly-trends-and-other-attributes)
-- [Visualization: Recommend actions to reduce risk and improve supplier reliability.](https://github.com/osnlz1694/Identifying-and-Prioritizing-Underperforming-Suppliers/tree/main?tab=readme-ov-file#visualization-recommend-actions-to-reduce-risk-and-improve-supplier-reliability)
+- [EDA Part 1: Identify the suppliers responsible for the most defects and downtime.](#eda-part-1-identify-the-suppliers-responsible-for-the-most-defects-and-downtime)
+- [EDA Part 2: Measure the business impact of supplier-related issues.](#eda-part-2-measure-the-business-impact-of-supplier-related-issues)
+- [EDA Part 3: Rank suppliers by performance to highlight those requiring quality improvement or replacement.](#eda-part-3-rank-suppliers-by-performance-to-highlight-those-requiring-quality-improvement-or-replacement)
+- [EDA Part 4: Highlight specific materials linked to poor quality.](#eda-part-4-highlight-specific-materials-linked-to-poor-quality)
+- [EDA Addendum: Explore monthly trends and other attributes.](#eda-addendum-explore-monthly-trends-and-other-attributes)
+- [Visualization: Recommend actions to reduce risk and improve supplier reliability.](#visualization-recommend-actions-to-reduce-risk-and-improve-supplier-reliability)
 
 
 ## Pre-EDA: Assess the source and granularity of the data.
