@@ -157,4 +157,5 @@ ORDER BY total_defect_qty DESC;
 ## Visualization: Recommend actions to reduce risk and improve supplier reliability.
 [Tableau Visualization Link](https://public.tableau.com/views/SupplierPerformanceAnalysisIdentifyingandPrioritizingUnderperformingSuppliers/Dashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
-<img width="2046" height="1534" alt="Dashboard" src="https://github.com/user-attachments/assets/c855e2f1-178e-49cf-b9c9-d7249452410d" />
+<img width="1027" height="771" alt="Screenshot 2025-07-21 at 1 53 21 PM" src="https://github.com/user-attachments/assets/4d6b9621-8d98-40a1-abae-a3467bc46f8f" />
+
