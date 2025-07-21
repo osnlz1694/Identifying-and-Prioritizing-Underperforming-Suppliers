@@ -1,4 +1,4 @@
-# Supplier Quality Analysis: Identifying and Prioritizing Underperforming Vendors
+# Identifying and Prioritizing Underperforming Vendors
 
 ## Introduction and Business Problem
 Strong supplier performance is essential for keeping operations smooth and minimizing costly disruptions. Defective materials and delays can lead to significant downtime, affecting both efficiency and customer satisfaction. To manage these risks, it’s important to track and evaluate supplier quality using reliable data.
