@@ -22,12 +22,14 @@ This is open-source data I found from Israel Bassey's ["Supplier Quality Analysi
 
 The granularity of the data can be split into two parts. On one hand, the granularity of the table `metrics` represents purchase details for each unique order like the date or total downtime of an order. On the other hand, the granularity of all of the other tables represent unique categories of their respective tables like unique plant locations in the table `plant`. And since each of these non-`metrics` tables contain an ID column that references to `metrics`, we will join multiple tables with `metrics` for the majority of this analysis.
 
+**Note:** Throughout the document, the terms "supplier" and "vendor" are interchangeable, but "supplier" will be primarily used.
+
 
 ## EDA Part 1: Identify the suppliers responsible for the most defects and downtime.
 We do this to quickly find out which suppliers performed the worst in terms of quantity. However, this won't tell the full story because not every supplier has the same number of orders in the table `metrics`. So, this part just shows which suppliers we should watch out for later in our analyses.
 
 ### Who are the worst suppliers with respect to defect quantity?
-To find the worst suppliers with respect to defect quantity, we first make use of the table `metrics`, which contains the column `defect_qty`. Next, we join tables `metrics` and `vendor` by `vendor_id` to get us one step closer to producing a table that shows the total defect quantity for each vendor. Then, we group by `vendor` and aggregate `defect_qty` using `SUM()` to obtain the defect quantity sum for each unique vendor. Lastly, we order by `total_defect` in descending order to see the vendors that have the most defects. To prevent information overflow, only the top five worst suppliers are shown.
+To find the worst suppliers with respect to defect quantity, we first make use of the table `metrics`, which contains the column `defect_qty`. Next, we join tables `metrics` and `vendor` by `vendor_id` to get us one step closer to producing a table that shows the total defect quantity for each supplier. Then, we group by `vendor` and aggregate `defect_qty` using `SUM()` to obtain the defect quantity sum for each unique supplier. Lastly, we order by `total_defect` in descending order to see the suppliers that have the most defects. To prevent information overflow, only the top five worst suppliers are shown.
 
 ```sql
 SELECT v.vendor, SUM(m.defect_qty) AS total_defect
@@ -56,6 +58,7 @@ ORDER BY total_downtime DESC;
 ## EDA Part 2: Measure the business impact of supplier-related issues.
 This part is the Pareto-like analysis.
 
+percentage analysis by supplier here.
 ```sql
 CREATE VIEW percent_problems_by_vendor AS
 SELECT
@@ -79,7 +82,10 @@ CROSS JOIN (
 		SUM(downtime_minutes) AS grand_total_dtm
 	FROM metrics
 ) AS t;
+```
 
+business impact of defect quantity here.
+```sql
 SELECT SUM(percent_total_dfq)
 FROM (
 	SELECT *
@@ -88,7 +94,10 @@ FROM (
 	LIMIT 26
 ) AS v);
 # Top 26 out of 320 (approx. 8%) vendors in total defects caused 80% of total defects for our company
+```
 
+business impact of downtime here.
+```sql
 SELECT SUM(percent_total_dtm)
 FROM (
 	SELECT *
@@ -103,6 +112,7 @@ FROM (
 ## EDA Part 3: Rank suppliers by performance to highlight those requiring quality improvement or replacement.
 This part is the ranking by supplier score one.
 
+z-score calculations here.
 ```sql
 CREATE VIEW sup_perf_metrics AS
 SELECT
@@ -129,7 +139,10 @@ CROSS JOIN (
 		STDDEV_SAMP(downtime_minutes) AS dtm_sd
 	FROM metrics
 ) AS global;
+```
 
+supplier score calculation and ranking here.
+```sql
 CREATE VIEW sup_perf_ranks AS
 SELECT *, ((0.4 * dfq_zscore) + (0.6 * dtm_zscore)) * 100 AS supplier_score
 FROM sup_perf_metrics
@@ -151,6 +164,61 @@ JOIN material_type AS mt ON m.material_type_id = mt.material_type_id
 JOIN vendor AS v ON m.vendor_id = v.vendor_id
 GROUP BY material_type, vendor
 ORDER BY total_defect_qty DESC;
+```
+
+
+## EDA Addendum: Explore monthly trends and other attributes.
+monthly trends stuff here.
+```sql
+SELECT
+    v.vendor,
+    STR_TO_DATE(DATE_FORMAT(STR_TO_DATE(m.date, '%d/%m/%Y %H:%i'), '%Y-%m-01'), '%Y-%m-%d') AS yr_mth,
+    SUM(defect_qty) AS monthly_defects,
+    SUM(downtime_minutes) AS monthly_downtime
+FROM metrics AS m
+JOIN vendor AS v ON m.vendor_id = v.vendor_id
+GROUP BY v.vendor, yr_mth;
+```
+
+full database join here.
+```sql
+CREATE VIEW other_stuff AS
+SELECT
+    m.date,
+    m.defect_qty,
+    m.downtime_minutes,
+    c.sub_category,
+    df.defect,
+    dt.defect_type,
+    mt.material_type,
+    pl.plant,
+    v.vendor
+FROM metrics AS m
+JOIN category AS c ON m.sub_category_id = c.sub_category_id
+JOIN defect_data AS df ON m.defect_id = df.defect_id
+JOIN defect_type AS dt ON m.defect_type_id = dt.defect_type_id
+JOIN material_type AS mt ON m.material_type_id = mt.material_type_id
+JOIN plant_location AS pl ON m.plant_id = pl.plant_id
+JOIN vendor AS v ON m.vendor_id = v.vendor_id;
+```
+
+example queries here.
+```sql
+# Which types of vendors experience the most defects/downtime?
+SELECT sub_category, SUM(defect_qty) AS total_defect, SUM(downtime_minutes) AS total_downtime
+FROM other_stuff
+GROUP BY sub_category;
+
+# Which types of defects experience the most defects?
+(SELECT defect, defect_type, SUM(defect_qty) AS total_defect
+FROM other_stuff
+GROUP BY defect, defect_type
+ORDER BY total_defect DESC;
+
+# Which plant locations experience the most defects/downtime?
+SELECT plant, SUM(defect_qty) AS total_defect, SUM(downtime_minutes) AS total_downtime
+FROM other_stuff
+GROUP BY plant;
 ```
 
 
