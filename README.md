@@ -87,7 +87,7 @@ FROM (
 	ORDER BY percent_total_dfq DESC
 	LIMIT 26
 ) AS v);
-# The top 26 out of 320 (approx. 8%) vendors in total defect quantity caused 80% of total defects for our company
+# Top 26 out of 320 (approx. 8%) vendors in total defects caused 80% of total defects for our company
 
 SELECT SUM(percent_total_dtm)
 FROM (
@@ -96,7 +96,7 @@ FROM (
 	ORDER BY percent_total_dtm DESC
 	LIMIT 15
 ) AS v);
-# The top 15 out of 320 (approx. 4.69%) vendors in total downtime caused 80% of total downtime for our company
+# Top 15 out of 320 (approx. 4.69%) vendors in total downtime caused 80% of total downtime for our company
 ```
 
 
