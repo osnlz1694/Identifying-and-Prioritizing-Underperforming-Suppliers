@@ -27,6 +27,7 @@ By using data to evaluate performance, this project supports better supplier dec
 - [EDA Part 4: Highlight specific materials linked to poor quality.](#eda-part-4-highlight-specific-materials-linked-to-poor-quality)
 - [EDA Addendum: Explore monthly trends and other attributes.](#eda-addendum-explore-monthly-trends-and-other-attributes)
 - [Visualization: Recommend actions to reduce risk and improve supplier reliability.](#visualization-recommend-actions-to-reduce-risk-and-improve-supplier-reliability)
+- [References](#references)
 
 
 ## Pre-EDA: Assess the source and granularity of the data.
@@ -240,3 +241,5 @@ GROUP BY plant;
 <img width="1026" height="770" alt="Screenshot 2025-07-21 at 2 02 22 PM" src="https://github.com/user-attachments/assets/e9522cd8-735b-4888-a4ef-cfd1291e3bfe" />
 
 
+## References
+Bassey, Israel. "Supplier Quality Analysis." Accessed 28 Jun, 2025, https://github.com/BasseyIsrael/Supplier-Quality-Analysis
