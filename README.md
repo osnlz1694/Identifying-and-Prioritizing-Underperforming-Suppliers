@@ -242,4 +242,5 @@ GROUP BY plant;
 
 
 ## References
-Bassey, Israel. "Supplier Quality Analysis." Accessed 28 June 2025, https://github.com/BasseyIsrael/Supplier-Quality-Analysis
+Bassey, Israel. "Supplier Quality Analysis." Accessed 28 June 2025,
+	https://github.com/BasseyIsrael/Supplier-Quality-Analysis
