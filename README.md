@@ -51,6 +51,20 @@ ORDER BY total_downtime DESC;
 
 <img width="217" height="103" alt="Screenshot 2025-07-11 at 1 56 41 PM" src="https://github.com/user-attachments/assets/b9e0a191-56da-4dd6-8930-51e85956fc57" />
 
+## EDA Part 2: Measure the business impact of supplier-related issues.
+
+This part is the Pareto-like analysis.
+
+## EDA Part 3: Rank suppliers by performance to highlight those requiring quality improvement or replacement.
+
+This part is the ranking by supplier score one.
+
+## EDA Part 4: Highlight specific materials linked to poor quality.
+
+This part is the one with total dfq/dtm by vendor and material type.
+
+## Visualization: Recommend actions to reduce risk and improve supplier reliability.
+
 
 
 
