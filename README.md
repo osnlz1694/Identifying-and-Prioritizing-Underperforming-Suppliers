@@ -19,10 +19,16 @@ By using data to evaluate performance, this project supports better supplier dec
 
 
 ## Table of Contents
-- 
+- [Pre-EDA: Assess the source and granularity of the data.](https://github.com/osnlz1694/Identifying-and-Prioritizing-Underperforming-Suppliers/tree/main?tab=readme-ov-file#pre-eda-source-and-granularity-of-the-data)
+- [EDA Part 1: Identify the suppliers responsible for the most defects and downtime.](https://github.com/osnlz1694/Identifying-and-Prioritizing-Underperforming-Suppliers/tree/main?tab=readme-ov-file#eda-part-1-identify-the-suppliers-responsible-for-the-most-defects-and-downtime)
+- [EDA Part 2: Measure the business impact of supplier-related issues.](https://github.com/osnlz1694/Identifying-and-Prioritizing-Underperforming-Suppliers/tree/main?tab=readme-ov-file#eda-part-2-measure-the-business-impact-of-supplier-related-issues)
+- [EDA Part 3: Rank suppliers by performance to highlight those requiring quality improvement or replacement.](https://github.com/osnlz1694/Identifying-and-Prioritizing-Underperforming-Suppliers/tree/main?tab=readme-ov-file#eda-part-3-rank-suppliers-by-performance-to-highlight-those-requiring-quality-improvement-or-replacement)
+- [EDA Part 4: Highlight specific materials linked to poor quality.](https://github.com/osnlz1694/Identifying-and-Prioritizing-Underperforming-Suppliers/tree/main?tab=readme-ov-file#eda-part-4-highlight-specific-materials-linked-to-poor-quality)
+- [EDA Addendum: Explore monthly trends and other attributes.](https://github.com/osnlz1694/Identifying-and-Prioritizing-Underperforming-Suppliers/tree/main?tab=readme-ov-file#eda-addendum-explore-monthly-trends-and-other-attributes)
+- [Visualization: Recommend actions to reduce risk and improve supplier reliability.](https://github.com/osnlz1694/Identifying-and-Prioritizing-Underperforming-Suppliers/tree/main?tab=readme-ov-file#visualization-recommend-actions-to-reduce-risk-and-improve-supplier-reliability)
 
 
-## Pre-EDA: Source and Granularity of the Data
+## Pre-EDA: Assess the source and granularity of the data.
 This is open-source data I found from Israel Bassey's ["Supplier Quality Analysis"](https://github.com/BasseyIsrael/Supplier-Quality-Analysis) project. Originally, this is real business data from Obvience that was anonymized. I implemented the exact same schema as the one in [Israel's project](https://github.com/BasseyIsrael/Supplier-Quality-Analysis?tab=readme-ov-file#source-of-data) but in MySQL.
 
 The granularity of the data can be split into two parts. On one hand, the granularity of the table `metrics` represents purchase details for each unique order like the date or total downtime of an order. On the other hand, the granularity of all of the other tables represent unique categories of their respective tables like unique plant locations in the table `plant`. And since each of these non-`metrics` tables contain an ID column that references to `metrics`, we will join multiple tables with `metrics` for the majority of this analysis.
