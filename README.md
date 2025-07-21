@@ -171,10 +171,10 @@ ORDER BY total_defect_qty DESC;
 monthly trends stuff here.
 ```sql
 SELECT
-    v.vendor,
-    STR_TO_DATE(DATE_FORMAT(STR_TO_DATE(m.date, '%d/%m/%Y %H:%i'), '%Y-%m-01'), '%Y-%m-%d') AS yr_mth,
-    SUM(defect_qty) AS monthly_defects,
-    SUM(downtime_minutes) AS monthly_downtime
+	v.vendor,
+	STR_TO_DATE(DATE_FORMAT(STR_TO_DATE(m.date, '%d/%m/%Y %H:%i'), '%Y-%m-01'), '%Y-%m-%d') AS yr_mth,
+	SUM(defect_qty) AS monthly_defects,
+	SUM(downtime_minutes) AS monthly_downtime
 FROM metrics AS m
 JOIN vendor AS v ON m.vendor_id = v.vendor_id
 GROUP BY v.vendor, yr_mth;
@@ -184,15 +184,15 @@ full database join here.
 ```sql
 CREATE VIEW other_stuff AS
 SELECT
-    m.date,
-    m.defect_qty,
-    m.downtime_minutes,
-    c.sub_category,
-    df.defect,
-    dt.defect_type,
-    mt.material_type,
-    pl.plant,
-    v.vendor
+	m.date,
+	m.defect_qty,
+	m.downtime_minutes,
+	c.sub_category,
+	df.defect,
+	dt.defect_type,
+	mt.material_type,
+	pl.plant,
+	v.vendor
 FROM metrics AS m
 JOIN category AS c ON m.sub_category_id = c.sub_category_id
 JOIN defect_data AS df ON m.defect_id = df.defect_id
