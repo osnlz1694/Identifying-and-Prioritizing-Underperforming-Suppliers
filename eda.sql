@@ -51,7 +51,7 @@ FROM (
 	FROM metrics
 	GROUP BY vendor_id
 	HAVING COUNT(*) >= 20
-	) AS supplier
+) AS supplier
 JOIN vendor AS v ON supplier.vendor_id = v.vendor_id
 CROSS JOIN (
 	SELECT
@@ -60,7 +60,7 @@ CROSS JOIN (
         	AVG(downtime_minutes) AS dtm_avg,
         	STDDEV_SAMP(downtime_minutes) AS dtm_sd
 	FROM metrics
-	) AS global);
+) AS global);
 
 CREATE VIEW sup_perf_ranks AS
 (SELECT *, ((0.4 * dfq_zscore) + (0.6 * dtm_zscore)) * 100 AS supplier_score
@@ -88,7 +88,7 @@ FROM (
     	FROM metrics
     	GROUP BY material_type_id
     	HAVING COUNT(*) >= 20
-	) AS materials
+) AS materials
 JOIN material_type AS mt ON materials.material_type_id = mt.material_type_id
 CROSS JOIN (
 	SELECT
@@ -97,7 +97,7 @@ CROSS JOIN (
         	AVG(downtime_minutes) AS dtm_avg,
         	STDDEV_SAMP(downtime_minutes) AS dtm_sd
     	FROM metrics
-	) AS global);
+) AS global);
 
 CREATE VIEW mat_perf_ranks AS
 (SELECT *, ((0.4 * dfq_zscore) + (0.6 * dtm_zscore)) * 100 AS material_score
@@ -124,14 +124,14 @@ FROM (
         	SUM(downtime_minutes) AS total_dtm
 	FROM metrics
 	GROUP BY vendor_id
-	) AS m
+) AS m
 JOIN vendor AS v ON m.vendor_id = v.vendor_id
 CROSS JOIN (
 	SELECT
 		SUM(defect_qty) AS grand_total_dfq,
 		SUM(downtime_minutes) AS grand_total_dtm
     	FROM metrics
-	) AS t);
+) AS t);
 
 (SELECT SUM(percent_total_dfq)
 FROM (
@@ -139,7 +139,7 @@ FROM (
 	FROM percent_problems_by_vendor
     	ORDER BY percent_total_dfq DESC
 	LIMIT 26
-	) AS v);
+) AS v);
 # The top 26 out of 320 (approx. 8%) vendors in total defect quantity caused 80% of total defects for our company
 
 (SELECT SUM(percent_total_dtm)
@@ -148,7 +148,7 @@ FROM (
 	FROM percent_problems_by_vendor
     	ORDER BY percent_total_dtm DESC
 	LIMIT 15
-	) AS v);
+) AS v);
 # The top 15 out of 320 (approx. 4.69%) vendors in total downtime caused 80% of total downtime for our company
 
 
@@ -171,14 +171,14 @@ FROM (
         	SUM(downtime_minutes) AS total_dtm
 	FROM metrics
 	GROUP BY material_type_id
-    	) AS m
+) AS m
 JOIN material_type AS mt ON m.material_type_id = mt.material_type_id
 CROSS JOIN (
 	SELECT
 		SUM(defect_qty) AS grand_total_dfq,
         	SUM(downtime_minutes) AS grand_total_dtm
     	FROM metrics
-	) AS t);
+) AS t);
 
 (SELECT SUM(percent_total_dfq)
 FROM (
@@ -186,7 +186,7 @@ FROM (
 	FROM percent_problems_by_mat_type
     	ORDER BY percent_total_dfq DESC
 	LIMIT 5
-    	) AS mt);
+) AS mt);
 # The top 5 out of 22 (approx. 22.7%) material types in total defect quantity caused 80% of total defects for our company
 
 (SELECT SUM(percent_total_dtm)
@@ -195,7 +195,7 @@ FROM (
 	FROM percent_problems_by_mat_type
     	ORDER BY percent_total_dtm DESC
 	LIMIT 4
-    	) AS mt);
+) AS mt);
 # The top 4 out of 22 (approx. 18.18%) material types in total downtime caused 80% of total downtime for our company
 
 
