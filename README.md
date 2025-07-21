@@ -19,7 +19,7 @@ By using data to evaluate performance, this project supports better supplier dec
 
 
 ## Table of Contents
-- [Pre-EDA: Assess the source and granularity of the data.](https://github.com/osnlz1694/Identifying-and-Prioritizing-Underperforming-Suppliers/tree/main?tab=readme-ov-file#pre-eda-source-and-granularity-of-the-data)
+- [Pre-EDA: Assess the source and granularity of the data.](#pre-eda-source-and-granularity-of-the-data)
 - [EDA Part 1: Identify the suppliers responsible for the most defects and downtime.](https://github.com/osnlz1694/Identifying-and-Prioritizing-Underperforming-Suppliers/tree/main?tab=readme-ov-file#eda-part-1-identify-the-suppliers-responsible-for-the-most-defects-and-downtime)
 - [EDA Part 2: Measure the business impact of supplier-related issues.](https://github.com/osnlz1694/Identifying-and-Prioritizing-Underperforming-Suppliers/tree/main?tab=readme-ov-file#eda-part-2-measure-the-business-impact-of-supplier-related-issues)
 - [EDA Part 3: Rank suppliers by performance to highlight those requiring quality improvement or replacement.](https://github.com/osnlz1694/Identifying-and-Prioritizing-Underperforming-Suppliers/tree/main?tab=readme-ov-file#eda-part-3-rank-suppliers-by-performance-to-highlight-those-requiring-quality-improvement-or-replacement)
