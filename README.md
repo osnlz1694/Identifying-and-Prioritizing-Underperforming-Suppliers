@@ -51,4 +51,9 @@ ORDER BY total_downtime DESC;
 
 <img width="217" height="103" alt="Screenshot 2025-07-11 at 1 56 41 PM" src="https://github.com/user-attachments/assets/b9e0a191-56da-4dd6-8930-51e85956fc57" />
 
+
+
+
+
+[Tableau Visualization Link](https://public.tableau.com/views/SupplierPerformanceAnalysisIdentifyingandPrioritizingUnderperformingSuppliers/Dashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 <div class='tableauPlaceholder' id='viz1752994094604' style='position: relative'><noscript><a href='#'><img alt='Supplier Performance Analysis: Identifying and Prioritizing Underperforming Suppliers ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Su&#47;SupplierPerformanceAnalysisIdentifyingandPrioritizingUnderperformingSuppliers&#47;Dashboard&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='SupplierPerformanceAnalysisIdentifyingandPrioritizingUnderperformingSuppliers&#47;Dashboard' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Su&#47;SupplierPerformanceAnalysisIdentifyingandPrioritizingUnderperformingSuppliers&#47;Dashboard&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>
