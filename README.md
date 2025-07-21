@@ -6,8 +6,9 @@ Strong supplier performance is essential for keeping operations smooth and minim
 
 This project focuses on two key metrics: the number of product defects and the total downtime caused by those defects. These metrics help identify suppliers that are negatively impacting operations.
 
-The goal of this analysis is to:
+The goals for this analysis is to:
 
+- Assess the source and granularity of the data.
 - Identify suppliers responsible for the most defects and downtime.
 - Measure the business impact of supplier-related issues.
 - Rank suppliers by performance to highlight those requiring quality improvement or replacement.
