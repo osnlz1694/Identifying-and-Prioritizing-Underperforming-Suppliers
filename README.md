@@ -1,4 +1,4 @@
-# Identifying and Prioritizing Underperforming Vendors
+# Identifying and Prioritizing Underperforming Suppliers
 
 
 ## Introduction and Business Problem
