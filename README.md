@@ -166,13 +166,18 @@ CROSS JOIN (
 ) AS global;
 ```
 
-supplier score calculation and ranking here.
+<img width="503" height="107" alt="Screenshot 2025-07-24 at 12 34 37 PM" src="https://github.com/user-attachments/assets/27a24759-6bfb-4960-a96c-a94e80a4f985" />
+
+After standardizing both metrics, we can now calculate the supplier score for each unique supplier. The supplier score is a weighted sum of both standardized metrics, where we add 60% of the standardized downtime and 40% of the standardized defect quantity. Total downtime carries more weight in the calculation because it directly affects the continuity of operations, which is crucial to suppliers performing well. On the other hand, total defect quantity is more geared towards product quality, which could be more impactful for material quality analysis.
+
 ```sql
 CREATE VIEW sup_perf_ranks AS
 SELECT *, ((0.4 * dfq_zscore) + (0.6 * dtm_zscore)) * 100 AS supplier_score
 FROM sup_perf_metrics
 ORDER BY supplier_score DESC;
 ```
+
+<img width="611" height="106" alt="Screenshot 2025-07-24 at 12 37 38 PM" src="https://github.com/user-attachments/assets/61d160fb-698e-4e0c-9146-b7f3e5caabdf" />
 
 
 ## EDA Part 4: Highlight specific materials linked to poor quality.
