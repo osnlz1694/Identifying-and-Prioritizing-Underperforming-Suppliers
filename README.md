@@ -132,9 +132,11 @@ We already know how much of an impact defects and downtime have on the business.
 
 Before we calculate supplier scores using total defects/downtime, we have to standardize these metrics since total defects is measured in units, while total downtime is measured in minutes. To standardize these metrics, we calculate the z-scores of both metrics for each unique supplier.
 
-\[
-z = \frac{x - \mu}{\sigma}
-\]
+The z-score is calculated as $z = \frac{x - \mu}{\sigma}$.
+- $z$ = z-score
+- $x$ = total defect/downtime
+- $mu$ = mean of total defect/downtime
+- $\sigma$ = standard deviation of total defect/downtime
 
 ```sql
 CREATE VIEW sup_perf_metrics AS
