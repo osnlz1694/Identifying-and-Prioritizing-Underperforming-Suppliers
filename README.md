@@ -135,7 +135,7 @@ Before we calculate supplier scores using total defects/downtime, we have to sta
 The z-score is calculated as $z = \frac{x - \mu}{\sigma}$.
 - $z$ = z-score
 - $x$ = total defect/downtime
-- $mu$ = mean of total defect/downtime
+- $\mu$ = mean of total defect/downtime
 - $\sigma$ = standard deviation of total defect/downtime
 
 ```sql
