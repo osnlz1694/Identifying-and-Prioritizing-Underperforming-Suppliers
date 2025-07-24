@@ -134,7 +134,7 @@ FROM (
 ## EDA Part 3: Rank suppliers by performance to highlight those requiring quality improvement or replacement.
 We already know how much of an impact defects and downtime have on the business. However, to make targeted improvements for supplier performance, we have to integrate both metrics, total defects/downtime, into a single metric that allows us to easily identify and prioritize underperforming suppliers. Thus, we rank suppliers using a supplier score.
 
-Before we calculate supplier scores using total defects/downtime, we have to standardize these metrics since total defects is measured in units, while total downtime is measured in minutes. To standardize these metrics, we calculate the z-scores of both metrics for each unique supplier.
+Before we calculate supplier scores using total defects/downtime, we have to standardize these metrics since total defects is measured in units, while total downtime is measured in minutes. To standardize these metrics, we calculate the z-scores of both metrics for each unique supplier. Also, we filter out all suppliers that have less than 20 orders using the statement `HAVING COUNT(*) >= 20`. This is because some suppliers have very few orders while more than half had over 20 orders, which would've skewed the z-score calculations. I chose 20 orders as the minimum because the average number of orders in the data was approximately 20.
 
 The z-score is calculated as $z = \frac{x - \mu}{\sigma}$.
 - $z$ = z-score
@@ -185,7 +185,8 @@ ORDER BY supplier_score DESC;
 
 
 ## EDA Part 4: Highlight specific materials linked to poor quality.
-This part is the one with total dfq/dtm by vendor and material type.
+
+Since we are now able to make targeted improvements using the ranking of suppliers through supplier scores, we now need to find out the things suppliers need to improve on, in this case the materials that are linked to poor performance. Thus, we query for the total defect/downtime grouped by supplier and material type.
 
 ```sql
 SELECT
@@ -202,7 +203,9 @@ ORDER BY total_defect_qty DESC;
 
 
 ## EDA Addendum: Explore monthly trends and other attributes.
-monthly trends stuff here.
+
+Last but not least, 
+
 ```sql
 SELECT
 	v.vendor,
