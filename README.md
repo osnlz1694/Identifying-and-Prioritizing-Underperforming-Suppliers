@@ -72,6 +72,7 @@ ORDER BY total_downtime DESC;
 The first part of the analysis shows which suppliers performed the worst in terms of total defects and downtime. But, it doesn't actually show how much suppliers' performances impact the business as a whole. With that in mind, we measure the business impact using something similar to Pareto analysis. That is, we find the percent of causes, in this case the number of suppliers, that lead to 80% of total defects/downtime.
 
 The query below conducts percentage analyses for each unique supplier, giving us the percentage of total defects/downtime a unique supplier has within the data.
+
 ```sql
 CREATE VIEW percent_problems_by_vendor AS
 SELECT
@@ -97,10 +98,10 @@ CROSS JOIN (
 ) AS t;
 ```
 
-Expected output:
 <img width="435" height="105" alt="Screenshot 2025-07-24 at 11 34 13 AM" src="https://github.com/user-attachments/assets/e4b0208c-366d-4916-a605-51834885799c" />
 
-After we calculate the percentage of total defects/downtime for each unique supplier, we find out how many of the top suppliers contribute to 80% of total defects/downtime. This query uses the table `percent_problems_by_vendor` then orders the total defect quantity by descending order. Lastly, we just test out different values for our `LIMIT` statement until we get the closest `SUM(percent_total_dfq)` to 80%.
+After we calculate the percentage of total defects/downtime for each unique supplier, we find out how many of the top suppliers contribute to 80% of total defects/downtime. This query uses the table `percent_problems_by_vendor` then orders the total defect quantity by descending order. Lastly, we test out different values for our `LIMIT` statement until we get the closest `SUM(percent_total_dfq)` to 80%.
+
 ```sql
 SELECT SUM(percent_total_dfq)
 FROM (
@@ -113,6 +114,7 @@ FROM (
 ```
 
 The query below is the exact same as the one above but is for total downtime.
+
 ```sql
 SELECT SUM(percent_total_dtm)
 FROM (
