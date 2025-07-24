@@ -128,9 +128,13 @@ FROM (
 
 
 ## EDA Part 3: Rank suppliers by performance to highlight those requiring quality improvement or replacement.
-This part is the ranking by supplier score one.
+We already know how much of an impact defects and downtime have on the business. However, to make targeted improvements for supplier performance, we have to integrate both metrics, total defects/downtime, into a single metric that allows us to easily identify and prioritize underperforming suppliers. Thus, we rank suppliers using a supplier score.
 
-z-score calculations here.
+Before we calculate supplier scores using total defects/downtime, we have to standardize these metrics since total defects is measured in units, while total downtime is measured in minutes. To standardize these metrics, we calculate the z-scores of both metrics for each unique supplier.
+
+$$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
+$$ z-score = {total defect quantity - mean of total defect quantity} / standard deviation of total defect quantity $$
+
 ```sql
 CREATE VIEW sup_perf_metrics AS
 SELECT
