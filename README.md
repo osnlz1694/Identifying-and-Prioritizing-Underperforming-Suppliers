@@ -100,6 +100,8 @@ CROSS JOIN (
 
 <img width="435" height="105" alt="Screenshot 2025-07-24 at 11 34 13 AM" src="https://github.com/user-attachments/assets/e4b0208c-366d-4916-a605-51834885799c" />
 
+### How many of the top suppliers contribute to 80% of total defects?
+
 After we calculate the percentage of total defects/downtime for each unique supplier, we find out how many of the top suppliers contribute to 80% of total defects/downtime. This query uses the table `percent_problems_by_vendor` then orders the total defect quantity by descending order. Lastly, we test out different values for our `LIMIT` statement until we get the closest `SUM(percent_total_dfq)` to 80%.
 
 ```sql
@@ -112,6 +114,8 @@ FROM (
 ) AS v);
 # Top 26 out of 320 (approx. 8%) vendors in total defects caused 80% of total defects for our company
 ```
+
+### How many of the top suppliers contribute to 80% of total downtime?
 
 The query below is the exact same as the one above but is for total downtime.
 
