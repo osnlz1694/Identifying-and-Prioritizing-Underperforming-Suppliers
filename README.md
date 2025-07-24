@@ -204,7 +204,9 @@ ORDER BY total_defect_qty DESC;
 
 ## EDA Addendum: Explore monthly trends and other attributes.
 
-Last but not least, 
+This part of EDA is to supplement past analyses as well as finding extensions for more analysis.
+
+The query below shows the monthly trend of total defects/downtime by supplier and month. This gives us a broader view of a supplier's performance, which could then be further explored in EDA parts 3 and 4.
 
 ```sql
 SELECT
@@ -217,7 +219,8 @@ JOIN vendor AS v ON m.vendor_id = v.vendor_id
 GROUP BY v.vendor, yr_mth;
 ```
 
-full database join here.
+This query is a essentially a full database join of all the tables with the table `metrics`.
+
 ```sql
 CREATE VIEW other_stuff AS
 SELECT
@@ -239,7 +242,8 @@ JOIN plant_location AS pl ON m.plant_id = pl.plant_id
 JOIN vendor AS v ON m.vendor_id = v.vendor_id;
 ```
 
-example queries here.
+Below are some example queries to further explore complex relationships between certain attributes and how they may affect or be linked to total defects/downtime. I encourage others to continue this analysis by using the query above.
+
 ```sql
 # Which types of vendors experience the most defects/downtime?
 SELECT sub_category, SUM(defect_qty) AS total_defect, SUM(downtime_minutes) AS total_downtime
