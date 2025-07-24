@@ -242,7 +242,7 @@ JOIN plant_location AS pl ON m.plant_id = pl.plant_id
 JOIN vendor AS v ON m.vendor_id = v.vendor_id;
 ```
 
-Below are some example queries to further explore complex relationships between certain attributes and how they may affect or be linked to total defects/downtime. I encourage others to continue this analysis by using the query above.
+Below are some example queries to further explore relationships between certain attributes and how they may affect or link to total defects/downtime. I encourage others to continue this analysis by using the query above.
 
 ```sql
 # Which types of vendors experience the most defects/downtime?
